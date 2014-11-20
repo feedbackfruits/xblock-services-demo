@@ -21,19 +21,19 @@ def package_data(pkg, roots):
 
 
 setup(
-    name='services-demo-xblock',
+    name='xblockservicesdemo',
     version='0.2',
     description='XBlock Services Demo',
     packages=[
-        'xblockservices',
+        'xblockservicesdemo',
     ],
     install_requires=[
         'XBlock',
     ],
     entry_points={
         'xblock.v1': [
-            'services-demo-xblock = xblockservices:ServicesDemoXBlock',
+            'xblockservicesdemo = xblockservicesdemo:ServicesDemoXBlock',
         ]
     },
-    package_data=package_data("xblockservices", ["static"]),
+    package_data=package_data("xblockservicesdemo", ["static"]),
 )

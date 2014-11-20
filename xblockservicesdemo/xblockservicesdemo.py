@@ -39,7 +39,7 @@ class ServicesDemoXBlock(XBlock):
         return [
             ("Services Demo XBlock",
              """<vertical_demo>
-                <services-demo-xblock/>
+                <xblockservicesdemo/>
                 </vertical_demo>
              """),
         ]
