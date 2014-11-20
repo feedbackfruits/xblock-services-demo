@@ -5,8 +5,9 @@ import pkg_resources
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer
 from xblock.fragment import Fragment
+from xblock.references.plugins.services import UserService
 
-XBlock.needs('UserService')
+@XBlock.needs('UserService')
 class ServicesDemoXBlock(XBlock):
     """
     TO-DO: document what your XBlock does.
