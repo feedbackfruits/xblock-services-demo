@@ -1,2 +1,2 @@
-xblock-services-demo
+XBlock services demo
 ====================
