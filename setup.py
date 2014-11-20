@@ -22,7 +22,7 @@ def package_data(pkg, roots):
 
 setup(
     name='services-demo-xblock',
-    version='0.1',
+    version='0.2',
     description='XBlock Services Demo',
     packages=[
         'xblockservices',
