@@ -1,0 +1,3 @@
+*.pyc
+.DS_Store
+services_demo_xblock.egg-info/
