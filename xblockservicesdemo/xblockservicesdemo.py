@@ -7,7 +7,7 @@ from xblock.core import XBlock
 from xblock.fields import Scope, Integer
 from xblock.fragment import Fragment
 from xblock_django.user_service import DjangoXBlockUserService
-from xblock_django.user_service import DjangoXBlockCourseService
+from xblock_django.course_service import DjangoXBlockCourseService
 
 @XBlock.needs('user')
 @XBlock.needs('course')
