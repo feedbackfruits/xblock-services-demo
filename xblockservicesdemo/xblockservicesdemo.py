@@ -26,12 +26,12 @@ class ServicesDemoXBlock(XBlock):
 
     @property
     def user_name(self):
-        user = self.runtime.service(self, 'user').get_current()
-        return user.get_full_name
+        user = self.runtime.service(self, 'user').get_current_user()
+        return user.full_name
 
     @property
     def user_email(self):
-        user = self.runtime.service(self, 'user').get_current()
+        user = self.runtime.service(self, 'user').get_current_user()
         return user.email
 
     @staticmethod
