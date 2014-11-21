@@ -6,8 +6,6 @@ import pkg_resources
 from xblock.core import XBlock
 from xblock.fields import Scope, String
 from xblock.fragment import Fragment
-from xblock_django.user_service import DjangoXBlockUserService
-from xblock_django.course_service import DjangoXBlockCourseService
 
 @XBlock.needs('user')
 @XBlock.needs('course')
