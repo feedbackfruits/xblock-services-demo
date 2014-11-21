@@ -6,7 +6,7 @@ import pkg_resources
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer
 from xblock.fragment import Fragment
-from xblock.reference.user import UserService
+from xblock_django.user_service import DjangoXBlockUserService
 
 @XBlock.needs('user')
 class ServicesDemoXBlock(XBlock):
