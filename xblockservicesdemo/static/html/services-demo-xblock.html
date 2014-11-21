@@ -3,52 +3,52 @@
   <table>
     <tr>
       <th>id</th>
-      <td>{user.id}</td>
+      <td>{self.user.id}</td>
     </tr>
     <tr>
       <th>course_anon_id</th>
-      <td>{user.course_anon_id}</td>
+      <td>{self.user.course_anon_id}</td>
     </tr>
     <tr>
       <th>global_anon_id</th>
-      <td>{user.global_anon_id}</td>
+      <td>{self.user.global_anon_id}</td>
     </tr>
     <tr>
       <th>username</th>
-      <td>{user.username}</td>
+      <td>{self.user.username}</td>
     </tr>
     <tr>
       <th>full_name</th>
-      <td>{user.full_name}</td>
+      <td>{self.user.full_name}</td>
     </tr>
     <tr>
       <th>email</th>
       <td>
-        <a href="mailto:{user.email}">{user.email}</a>
+        <a href="mailto:{self.user.email}">{self.user.email}</a>
       </td>
     </tr>
     <tr>
       <th>is_authenticated</th>
-      <td>{user.is_authenticated}</td>
+      <td>{self.user.is_authenticated}</td>
     </tr>
   </table>
   <h1>Course</h1>
   <table>
     <tr>
       <th>id</th>
-      <td>{course.id}</td>
+      <td>{self.course.id}</td>
     </tr>
     <tr>
       <th>number</th>
-      <td>{course.number}</td>
+      <td>{self.course.number}</td>
     </tr>
     <tr>
       <th>display_name</th>
-      <td>{course.display_name}</td>
+      <td>{self.course.display_name}</td>
     </tr>
     <tr>
       <th>org</th>
-      <td>{course.org}</td>
+      <td>{self.course.org}</td>
     </tr>
   </table>
 </div>
