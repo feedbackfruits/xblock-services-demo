@@ -7,8 +7,10 @@ from xblock.core import XBlock
 from xblock.fields import Scope, Integer
 from xblock.fragment import Fragment
 from xblock_django.user_service import DjangoXBlockUserService
+from xblock_django.user_service import DjangoXBlockCourseService
 
 @XBlock.needs('user')
+@XBlock.needs('course')
 class ServicesDemoXBlock(XBlock):
     """
     TO-DO: document what your XBlock does.
@@ -33,6 +35,16 @@ class ServicesDemoXBlock(XBlock):
     def user_email(self):
         user = self.runtime.service(self, 'user').get_current_user()
         return user.email
+
+    @property
+    def course_number(self):
+        course = self.runtime.service(self, 'course').get_current_course()
+        return course.number
+
+    @property
+    def course_name(self):
+        course = self.runtime.service(self, 'course').get_current_course()
+        return course.name
 
     @staticmethod
     def workbench_scenarios():
