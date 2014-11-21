@@ -46,11 +46,6 @@ class ServicesDemoXBlock(XBlock):
         course = self.runtime.service(self, 'course').get_current_course()
         return course.display_name
 
-    @property
-    def course_key(self):
-        course = self.runtime.service(self, 'course').get_current_course()
-        return course.key
-
     @staticmethod
     def workbench_scenarios():
         """A canned scenario for display in the workbench."""
