@@ -1,10 +1,10 @@
-"""TO-DO: Write a description of what this XBlock is."""
+"""A simple XBlock demoing the data that the user and course services expose"""
 
 # import pudb;pudb.set_trace()
 import pkg_resources
 
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer
+from xblock.fields import Scope, String
 from xblock.fragment import Fragment
 from xblock_django.user_service import DjangoXBlockUserService
 from xblock_django.course_service import DjangoXBlockCourseService
@@ -13,8 +13,13 @@ from xblock_django.course_service import DjangoXBlockCourseService
 @XBlock.needs('course')
 class ServicesDemoXBlock(XBlock):
     """
-    TO-DO: document what your XBlock does.
+    A simple XBlock demoing the data that the user and course services expose
     """
+
+    display_name=String(
+        default="XBlock Services Demo",
+        scope=Scope.settings
+    )
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -27,24 +32,12 @@ class ServicesDemoXBlock(XBlock):
         return frag
 
     @property
-    def user_name(self):
-        user = self.runtime.service(self, 'user').get_current_user()
-        return user.full_name
+    def user(self):
+        return self.runtime.service(self, 'user').get_current_user()
 
     @property
-    def user_email(self):
-        user = self.runtime.service(self, 'user').get_current_user()
-        return user.email
-
-    @property
-    def course_number(self):
-        course = self.runtime.service(self, 'course').get_current_course()
-        return course.number
-
-    @property
-    def course_display_name(self):
-        course = self.runtime.service(self, 'course').get_current_course()
-        return course.display_name
+    def course(self):
+        return self.runtime.service(self, 'course').get_current_course()
 
     @staticmethod
     def workbench_scenarios():
