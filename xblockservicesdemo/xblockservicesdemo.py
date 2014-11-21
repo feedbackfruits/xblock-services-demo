@@ -42,9 +42,19 @@ class ServicesDemoXBlock(XBlock):
         return course.number
 
     @property
-    def course_name(self):
+    def course_title(self):
         course = self.runtime.service(self, 'course').get_current_course()
-        return course.name
+        return course.title
+
+    @property
+    def course_display_name(self):
+        course = self.runtime.service(self, 'course').get_current_course()
+        return course.display_name
+
+    @property
+    def course_key(self):
+        course = self.runtime.service(self, 'course').get_current_course()
+        return course.key
 
     @staticmethod
     def workbench_scenarios():
