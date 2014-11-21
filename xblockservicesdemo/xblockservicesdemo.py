@@ -1,13 +1,14 @@
 """TO-DO: Write a description of what this XBlock is."""
 
+# import pudb;pudb.set_trace()
 import pkg_resources
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer
 from xblock.fragment import Fragment
-from xblock.references.plugins.services import UserService
+from xblock.reference.user import UserService
 
-@XBlock.needs('UserService')
+@XBlock.needs('user')
 class ServicesDemoXBlock(XBlock):
     """
     TO-DO: document what your XBlock does.
@@ -25,13 +26,13 @@ class ServicesDemoXBlock(XBlock):
 
     @property
     def user_name(self):
-        user_service = self.runtime.service(self, 'UserService')
-        return user_service.name();
+        user = self.runtime.service(self, 'user').get_current()
+        return user.get_full_name
 
     @property
     def user_email(self):
-        user_service = self.runtime.service(self, 'UserService')
-        return user_service.email();
+        user = self.runtime.service(self, 'user').get_current()
+        return user.email
 
     @staticmethod
     def workbench_scenarios():
